@@ -1,4 +1,4 @@
-// "Ask my portfolio" — answers come from the portfolio's own data, matched in the browser.
+// "Ask my portfolio": answers come from the portfolio's own data, matched in the browser.
 // No API key or server is involved, so it works on static hosting and never invents facts.
 (() => {
   const { projects, profile } = window.PORTFOLIO;
@@ -13,11 +13,13 @@
       answer: () =>
         `<p>His main AI projects:</p>` +
         list([
-          `${caseLink("ai-escape-room", "AI Escape Room")} — an LLM benchmark where two models race through the same generated room, replayed in 3D. <em>Has video.</em>`,
-          `${caseLink("ai-job-application-agent", "AI Job Application Agent")} — tailors a resume and cover letter to a posting, then fills the employer's form. <em>Has video.</em>`,
-          `${caseLink("daily-life-ai", "Daily Life AI")} — Flutter assistant for mood, habits, finance and planning with Groq/Llama insights.`,
-          `${caseLink("smartcareers", "SmartCareers")} — AI career platform with job matching for five user roles.`,
-          `${caseLink("edumind-ai", "EduMind AI")} — adaptive learning with LLM tutoring and risk prediction.`,
+          `${caseLink("ai-escape-room", "AI Escape Room")}: an LLM benchmark where two models race through the same generated room, replayed in 3D. <em>Has video.</em>`,
+          `${caseLink("ai-job-application-agent", "AI Job Application Agent")}: tailors a resume and cover letter to a posting, then fills the employer's form. <em>Has video.</em>`,
+          `${caseLink("daily-life-ai", "Daily Life AI")}: Flutter assistant for mood, habits, finance and planning with Groq/Llama insights. <em>Has video.</em>`,
+          `${caseLink("cinematic-ai-portfolio", "Cinematic AI Portfolio")}: scroll-driven 3D portfolio with a RAG assistant on Groq and Llama 3.3. <em>Has video.</em>`,
+          `${caseLink("smartcareers", "SmartCareers")}: AI career platform with job matching for five user roles.`,
+          `${caseLink("edumind-ai", "EduMind AI")}: adaptive learning with LLM tutoring and risk prediction.`,
+          `${caseLink("peak-blend", "Peak Blend Coffeehouse")}: voice AI barista with tool calling and ~323ms time to first audio. <em>Has video.</em>`,
         ]),
     },
     {
@@ -41,11 +43,11 @@
     {
       keys: ["full-stack", "full stack", "fullstack", "backend", "frontend", "experience", "production"],
       answer: () =>
-        `<p>He builds applications end to end — frontend, API, database and deployment:</p>` +
+        `<p>He builds applications end to end: frontend, API, database and deployment:</p>` +
         list([
           `${caseLink("ai-job-application-agent", "AI Job Application Agent")}: Next.js 16 + SQLite, 57k lines of TypeScript, 126 test files.`,
           `${caseLink("smartcareers", "SmartCareers")}: React + Express + PostgreSQL, five role-scoped workflows.`,
-          `${caseLink("cafe-piranha", "Cafe Piranha")}: a staff attendance and payroll system deployed to production.`,
+          `${caseLink("cafe-piranha", "Cafe Piranha")}: a staff attendance and payroll system running in production for a café. <em>Has video.</em>`,
           `${caseLink("edumind-ai", "EduMind AI")}: React + Django REST Framework + PostgreSQL.`,
           `${caseLink("daily-life-ai", "Daily Life AI")}: Flutter client with a Node.js + PostgreSQL API.`,
         ]),
@@ -54,9 +56,9 @@
       keys: ["education", "degree", "university", "study", "studied", "qualification", "bsc", "diploma"],
       answer: () =>
         list([
-          "<b>BSc (Hons) Software Engineering — First Class</b>, Cardiff Metropolitan University / ICBT, 2024–2025",
-          "Higher Diploma in Computing & Software Engineering — First Class, 2023–2024",
-          "International Diploma in ICT — First Class, 2022",
+          "<b>BSc (Hons) Software Engineering, First Class</b>, Cardiff Metropolitan University / ICBT, 2024 - 2025",
+          "Higher Diploma in Computing & Software Engineering, First Class, 2023 - 2024",
+          "International Diploma in ICT, First Class, 2022",
         ]),
     },
     {
@@ -84,7 +86,7 @@
       keys: ["video", "demo", "watch"],
       answer: () =>
         `<p>Projects with demo videos:</p>` +
-        list(projects.filter((p) => p.videos.length).map((p) => `${caseLink(p.slug, p.name)} — ${p.videos.map((v) => v.label).join(", ")}`)),
+        list(projects.filter((p) => p.videos.length).map((p) => `${caseLink(p.slug, p.name)}: ${p.videos.map((v) => v.label).join(", ")}`)),
     },
     {
       keys: ["rag", "llm", "ai", "machine learning", "ml", "model", "prompt"],
@@ -94,7 +96,7 @@
           "Multi-provider routing across Groq, Gemini and OpenRouter behind one interface.",
           "Structured output validated with Zod; tool calling compiled per provider.",
           "Provenance checks that reject model-invented content structurally.",
-          "RAG (a portfolio chatbot over Llama 3.3) and classical ML — a LightGBM classifier at MAP 0.712.",
+          "RAG (a portfolio chatbot over Llama 3.3) and classical ML, including a LightGBM classifier at MAP 0.712.",
         ]),
     },
   ];
@@ -163,7 +165,7 @@
     panel.hidden = !open;
     fab.setAttribute("aria-expanded", String(open));
     if (open) {
-      if (!log.children.length) add("bot", "<p>Hi — I answer from the content of this portfolio. What would you like to know?</p>");
+      if (!log.children.length) add("bot", "<p>Hi! I answer from the content of this portfolio. What would you like to know?</p>");
       input.focus();
     }
   }

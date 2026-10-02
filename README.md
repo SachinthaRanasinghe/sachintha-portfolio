@@ -1,4 +1,4 @@
-# Sachintha Ranasinghe — Portfolio
+# Sachintha Ranasinghe | Portfolio
 
 Personal portfolio of Sachintha Ranasinghe, AI Systems Engineer. Static site (HTML/CSS/JS, no build step) served by GitHub Pages.
 
@@ -6,11 +6,11 @@ Personal portfolio of Sachintha Ranasinghe, AI Systems Engineer. Static site (HT
 
 ## Structure
 
-- `index.html` — page layout and section copy
-- `data.js` — projects (featured flag, case-study content, videos)
-- `app.js` — project cards, case-study dialog with video player, hash routing (`#project/<slug>`), nav state
-- `assistant.js` — "Ask my portfolio": answers from `data.js` in the browser, no API key
-- `assets/videos` — project demo videos (H.264, faststart)
+- `index.html`: page layout and section copy
+- `data.js`: projects (featured flag, case-study content, videos)
+- `app.js`: project cards, case-study dialog with video player, hash routing (`#project/<slug>`), nav state
+- `assistant.js`: "Ask my portfolio": answers from `data.js` in the browser, no API key
+- `assets/videos`: project demo videos (H.264, faststart)
 
 ## Adding a project video
 

@@ -8,7 +8,8 @@
   const previews = {
     escape: (p) => `<img class="pv-img" src="${p.poster}" alt="" loading="lazy" />`,
     image: (p) => `<img class="pv-img" src="${p.poster}" alt="" loading="lazy" />`,
-    phone: () => `
+    phone: (p) => p.poster ? `
+      <div class="pv-phone"><div class="phone phone-shot"><img src="${p.poster}" alt="" loading="lazy" /></div></div>` : `
       <div class="pv-phone"><div class="phone">
         <div class="notch"></div>
         <div class="p-h"></div><div class="p-s"></div>
@@ -42,7 +43,7 @@
   $("#featured").innerHTML = featured
     .map(
       (p, i) => `
-      <a class="card" href="#project/${p.slug}" aria-label="${esc(p.name)} — view case study">
+      <a class="card" href="#project/${p.slug}" aria-label="${esc(p.name)}: view case study">
         <div class="card-preview">${videoChip(p)}${preview(p)}</div>
         <div class="card-body">
           <div class="card-num"><span class="meta">Project ${pad(i + 1)}</span><span class="meta">${p.year}</span></div>
@@ -81,7 +82,7 @@
     const idx = projects.indexOf(p);
     const media = p.videos.length
       ? `<div class="player">
-          <video id="caseVideo" controls playsinline preload="metadata" poster="${p.videos[0].poster || ""}" src="${p.videos[0].src}"></video>
+          <video id="caseVideo" class="${p.videos[0].portrait ? "portrait" : ""}" controls playsinline preload="metadata" poster="${p.videos[0].poster || ""}" src="${p.videos[0].src}"></video>
           ${
             p.videos.length > 1
               ? `<div class="player-tabs" role="group" aria-label="Choose video">${p.videos
@@ -123,6 +124,7 @@
       btn.addEventListener("click", () => {
         const v = p.videos[+btn.dataset.v];
         body.querySelectorAll(".player-tabs button").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        video.classList.toggle("portrait", !!v.portrait);
         video.poster = v.poster || "";
         video.src = v.src;
         video.play().catch(() => {});
@@ -137,7 +139,7 @@
     renderCase(p);
     if (!dialog.open) dialog.showModal();
     dialog.scrollTop = 0;
-    document.title = `${p.name} — Sachintha Ranasinghe`;
+    document.title = `${p.name} | Sachintha Ranasinghe`;
   }
 
   function closeCase() {
@@ -149,7 +151,7 @@
   dialog.addEventListener("close", () => {
     const v = $("video", dialog);
     if (v) v.pause();
-    document.title = "Sachintha Ranasinghe — AI Systems Engineer";
+    document.title = "Sachintha Ranasinghe | AI Systems Engineer";
     if (location.hash.startsWith("#project/")) history.replaceState(null, "", location.pathname + location.search + "#projects");
     if (returnFocus) returnFocus.focus({ preventScroll: true });
   });
@@ -189,6 +191,13 @@
     { rootMargin: "-45% 0px -50% 0px" }
   );
   document.querySelectorAll("[data-section]").forEach((s) => s.id && observer.observe(s));
+
+  // ---------- Profile ----------
+  const profile = $("#profile");
+  $("#profileBtn").addEventListener("click", () => profile.showModal());
+  profile.addEventListener("click", (e) => {
+    if (e.target === profile || e.target.closest("[data-close]")) profile.close();
+  });
 
   // ---------- Mobile menu ----------
   const sidebar = $("#sidebar");

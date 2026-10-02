@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sachintha Ranasinghe — AI Systems Engineer</title>
-  <meta name="description" content="Sachintha Ranasinghe — AI Systems Engineer and full-stack developer in Dubai building LLM applications, AI agents and full-stack products." />
-  <meta property="og:title" content="Sachintha Ranasinghe — AI Systems Engineer" />
+  <title>Sachintha Ranasinghe | AI Systems Engineer</title>
+  <meta name="description" content="Sachintha Ranasinghe, AI Systems Engineer and full-stack developer in Dubai building LLM applications, AI agents and full-stack products." />
+  <meta property="og:title" content="Sachintha Ranasinghe | AI Systems Engineer" />
   <meta property="og:description" content="AI-powered products, full-stack applications and LLM systems. Projects with demo videos, resume and contact." />
   <meta property="og:image" content="assets/img/escape-room-poster.jpg" />
-  <meta name="theme-color" content="#0B0C0F" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%235B8DEF'/><text x='16' y='21.5' font-family='Arial' font-weight='700' font-size='14' fill='%23FFFFFF' text-anchor='middle'>SR</text></svg>" />
+  <meta name="theme-color" content="#0B0B0B" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ECE7DF'/><text x='16' y='21.5' font-family='Arial' font-weight='700' font-size='14' fill='%230B0B0B' text-anchor='middle'>SR</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -21,22 +21,22 @@
   <!-- Sidebar (desktop) / top bar (mobile) -->
   <aside class="sidebar" id="sidebar">
     <div class="sb-top">
-      <a href="#home" class="identity">
-        <img src="assets/img/avatar.jpg" alt="Sachintha Ranasinghe" class="avatar" width="44" height="44" />
+      <button type="button" class="identity" id="profileBtn" aria-haspopup="dialog" aria-controls="profile" title="View profile">
+        <img src="assets/img/avatar.jpg" alt="" class="avatar" width="44" height="44" />
         <span>
           <strong>Sachintha Ranasinghe</strong>
           <small>AI Systems Engineer</small>
         </span>
-      </a>
+      </button>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
         <span></span><span></span>
       </button>
     </div>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="#home" data-section="home"><span class="idx">01</span>Home</a>
-      <a href="#about" data-section="about"><span class="idx">02</span>About</a>
-      <a href="#projects" data-section="projects"><span class="idx">03</span>Projects</a>
-      <a href="#skills" data-section="skills"><span class="idx">04</span>Skills</a>
+      <a href="#projects" data-section="projects"><span class="idx">02</span>Projects</a>
+      <a href="#skills" data-section="skills"><span class="idx">03</span>Skills</a>
+      <a href="#about" data-section="about"><span class="idx">04</span>About</a>
       <a href="#resume" data-section="resume"><span class="idx">05</span>Resume</a>
       <a href="#contact" data-section="contact"><span class="idx">06</span>Contact</a>
     </nav>
@@ -62,7 +62,7 @@
           <a href="assets/Sachintha_Ranasinghe_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Resume</a>
         </div>
         <div class="proof">
-          <div><b>10</b><span>Projects built</span></div>
+          <div><b>11</b><span>Projects built</span></div>
           <div><b>200+</b><span>Test files written</span></div>
           <div><b>1st</b><span>Class BSc (Hons)</span></div>
         </div>
@@ -105,56 +105,128 @@
 
     <!-- SKILLS -->
     <section class="section" id="skills" data-section>
-      <header class="sec-head"><h2 class="eyebrow">Engineering stack</h2></header>
-      <div class="cols3 stack">
-        <div>
-          <h3>AI / Intelligence</h3>
-          <ul><li>RAG</li><li>LLM Integration</li><li>AI Agents</li><li>Machine Learning</li><li>Prompt Engineering</li></ul>
-        </div>
-        <div>
-          <h3>Applications</h3>
-          <ul><li>React</li><li>Next.js</li><li>TypeScript</li><li>Flutter</li><li>Tailwind CSS</li></ul>
-        </div>
-        <div>
-          <h3>Backend / Data</h3>
-          <ul><li>Node.js</li><li>Python</li><li>Express</li><li>Django</li><li>PostgreSQL</li><li>Firebase</li><li>SQLite</li></ul>
-        </div>
+      <header class="sec-title">
+        <p class="eyebrow">Skills</p>
+        <h2>Engineering stack</h2>
+        <p class="sec-sub">The technologies I use across my projects, grouped by layer.</p>
+      </header>
+      <div class="stack-grid">
+        <article class="stack-card">
+          <header><h3>AI / Intelligence</h3><span>5</span></header>
+          <p>Model integration and the systems around it.</p>
+          <ul class="pills"><li>RAG</li><li>LLM Integration</li><li>AI Agents</li><li>Machine Learning</li><li>Prompt Engineering</li></ul>
+        </article>
+        <article class="stack-card">
+          <header><h3>Applications</h3><span>5</span></header>
+          <p>Web and mobile interfaces.</p>
+          <ul class="pills"><li>React</li><li>Next.js</li><li>TypeScript</li><li>Flutter</li><li>Tailwind CSS</li></ul>
+        </article>
+        <article class="stack-card">
+          <header><h3>Backend / Data</h3><span>7</span></header>
+          <p>APIs, services and storage.</p>
+          <ul class="pills"><li>Node.js</li><li>Python</li><li>Express</li><li>Django</li><li>PostgreSQL</li><li>Firebase</li><li>SQLite</li></ul>
+        </article>
       </div>
 
-      <header class="sec-head sub"><h2 class="eyebrow">How I build</h2></header>
-      <div class="cols3 philosophy">
-        <div><span class="num">01</span><h3>Build</h3><p>Turn ideas into functional software products.</p></div>
-        <div><span class="num">02</span><h3>Connect</h3><p>Combine frontend, backend, databases, APIs, and AI systems into complete applications.</p></div>
-        <div><span class="num">03</span><h3>Iterate</h3><p>Build, test, measure, improve, and ship.</p></div>
+      <header class="sec-title sub">
+        <p class="eyebrow">Process</p>
+        <h2>How I build</h2>
+        <p class="sec-sub">Three habits that show up in every project.</p>
+      </header>
+      <div class="steps">
+        <article class="step">
+          <span class="step-n">01</span>
+          <h3>Build</h3>
+          <p>Turn ideas into functional software products.</p>
+          <p class="step-eg"><span>Example</span>AI Job Application Agent: from a job posting to two finished PDFs in a 1.9-minute median.</p>
+        </article>
+        <article class="step">
+          <span class="step-n">02</span>
+          <h3>Connect</h3>
+          <p>Combine frontend, backend, databases, APIs, and AI systems into complete applications.</p>
+          <p class="step-eg"><span>Example</span>Daily Life AI: Flutter app, Node.js API, PostgreSQL and Llama 3.3 working as one product.</p>
+        </article>
+        <article class="step">
+          <span class="step-n">03</span>
+          <h3>Iterate</h3>
+          <p>Build, test, measure, improve, and ship.</p>
+          <p class="step-eg"><span>Example</span>Peak Blend: time to first audio measured and cut from ~2.26s to ~323ms.</p>
+        </article>
       </div>
     </section>
 
     <!-- EDUCATION -->
     <section class="section" id="education">
-      <header class="sec-head"><h2 class="eyebrow">Education</h2></header>
-      <div class="edu">
-        <div class="edu-main">
-          <h3>BSc (Hons) Software Engineering</h3>
-          <p class="badge">First Class</p>
-          <p class="muted">Cardiff Metropolitan University / ICBT</p>
-          <p class="meta">2024–2025</p>
-        </div>
-        <ul class="edu-list">
-          <li><span>Higher Diploma in Computing &amp; Software Engineering — First Class</span><span class="meta">2023–2024</span></li>
-          <li><span>International Diploma in ICT — First Class</span><span class="meta">2022</span></li>
-        </ul>
-      </div>
+      <header class="sec-title">
+        <p class="eyebrow">Education</p>
+        <h2>Academic background</h2>
+        <p class="sec-sub">Three qualifications, all completed with First Class.</p>
+      </header>
+      <ol class="timeline">
+        <li class="tl-item is-main">
+          <span class="tl-year">2024 - 2025</span>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>BSc (Hons) Software Engineering</h3>
+              <span class="badge">First Class</span>
+            </div>
+            <p>Cardiff Metropolitan University / ICBT</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-year">2023 - 2024</span>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>Higher Diploma in Computing &amp; Software Engineering</h3>
+              <span class="badge">First Class</span>
+            </div>
+            <p>Cardiff Metropolitan University / ICBT</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <span class="tl-year">2022</span>
+          <div class="tl-card">
+            <div class="tl-head">
+              <h3>International Diploma in ICT</h3>
+              <span class="badge">First Class</span>
+            </div>
+            <p>ICBT Campus</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <!-- ABOUT -->
     <section class="section" id="about" data-section>
-      <header class="sec-head"><h2 class="eyebrow">About</h2></header>
-      <div class="about">
-        <p class="about-lead">I'm an AI Systems Engineer and full-stack developer based in Dubai. I build software with language models inside it — and I care most about the parts around the model that make it reliable.</p>
-        <div class="about-body">
-          <p>My recent work is LLM applications end to end: multi-provider routing across Groq, Gemini and OpenRouter, structured output validated with Zod, tool calling, RAG and Playwright browser automation. I prefer enforcing correctness in the architecture — schemas, deterministic simulators, provenance checks — rather than relying on a prompt to behave.</p>
-          <p>On the application side I work across React, Next.js and Flutter frontends, Node.js, Express and Django backends, and PostgreSQL, SQLite and Firebase data layers. I ship with tests: my two most recent projects carry 82 and 126 test files respectively.</p>
-          <p>I hold a First Class BSc (Hons) in Software Engineering from Cardiff Metropolitan University.</p>
+      <header class="sec-title">
+        <p class="eyebrow">About</p>
+        <h2>About me</h2>
+      </header>
+      <div class="about-grid">
+        <aside class="about-card">
+          <img src="assets/img/avatar-lg.jpg" alt="Sachintha Ranasinghe" width="96" height="96" loading="lazy" />
+          <h3>Sachintha Ranasinghe</h3>
+          <p class="about-role">AI Systems Engineer</p>
+          <dl>
+            <div><dt>Based in</dt><dd>Dubai, UAE</dd></div>
+            <div><dt>Focus</dt><dd>AI engineering, full-stack</dd></div>
+            <div><dt>Degree</dt><dd>BSc (Hons), First Class</dd></div>
+            <div><dt>Status</dt><dd><i class="dot"></i>Available for work</dd></div>
+          </dl>
+        </aside>
+        <div class="about-text">
+          <p class="about-lead">I'm an AI Systems Engineer and full-stack developer based in Dubai. I build software with language models inside it, and I care most about the parts around the model that make it reliable.</p>
+          <p>My recent work is LLM applications end to end: multi-provider routing across Groq, Gemini and OpenRouter, structured output validated with Zod, tool calling, RAG and Playwright browser automation. I prefer enforcing correctness in the architecture (schemas, deterministic simulators, provenance checks) rather than relying on a prompt to behave.</p>
+          <p>On the application side I work across React, Next.js and Flutter frontends, Node.js, Express and Django backends, and PostgreSQL, SQLite and Firebase data layers. I ship with tests: my two most recent projects carry 82 and 126 test files.</p>
+          <h3 class="focus-title">What I focus on</h3>
+          <ul class="focus-grid">
+            <li>AI engineering</li>
+            <li>LLM applications</li>
+            <li>Full-stack development</li>
+            <li>Backend architecture</li>
+            <li>Product-oriented engineering</li>
+            <li>Real-world software systems</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -170,14 +242,14 @@
           <h3>Experience</h3>
           <div>
             <p class="r-title">Software Engineering / Freelance Projects</p>
-            <p class="muted">AI applications, full-stack platforms and a production staff &amp; payroll system for a café — built end to end, from schema to deployment.</p>
+            <p class="muted">AI applications, full-stack platforms and a production staff &amp; payroll system for a café, built end to end, from schema to deployment.</p>
           </div>
         </div>
         <div class="r-row">
           <h3>Education</h3>
           <div>
-            <p class="r-title">BSc (Hons) Software Engineering — First Class</p>
-            <p class="muted">Cardiff Metropolitan University / ICBT · 2024–2025</p>
+            <p class="r-title">BSc (Hons) Software Engineering, First Class</p>
+            <p class="muted">Cardiff Metropolitan University / ICBT · 2024 - 2025</p>
           </div>
         </div>
         <div class="r-row">
@@ -210,6 +282,26 @@
     </section>
   </main>
 
+  <!-- Profile -->
+  <dialog class="profile" id="profile" aria-labelledby="profileName">
+    <button class="icon-btn profile-close" data-close aria-label="Close profile">✕</button>
+    <img src="assets/img/avatar-lg.jpg" alt="Sachintha Ranasinghe" class="profile-photo" width="260" height="260" />
+    <p class="status"><i class="dot"></i>Available for work</p>
+    <h2 id="profileName">Sachintha Ranasinghe</h2>
+    <p class="profile-role">AI Systems Engineer · Full-Stack Developer</p>
+    <p class="profile-bio">I build AI-powered products and full-stack applications: LLM systems, agents and the backends around them.</p>
+    <dl class="profile-facts">
+      <div><dt>Based in</dt><dd>Dubai, UAE</dd></div>
+      <div><dt>Education</dt><dd>BSc (Hons) Software Engineering, First Class</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:sachintha.ranasinghe.int@gmail.com">sachintha.ranasinghe.int@gmail.com</a></dd></div>
+    </dl>
+    <div class="profile-actions">
+      <a href="assets/Sachintha_Ranasinghe_Resume.pdf" class="btn btn-primary" target="_blank" rel="noopener">Resume <span class="arr">→</span></a>
+      <a href="https://www.linkedin.com/in/sachintha-ranasinghe-620b572b4" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/SachinthaRanasinghe" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </dialog>
+
   <!-- Case study -->
   <dialog class="case" id="case" aria-labelledby="caseTitle">
     <div class="case-inner" id="caseBody"></div>
@@ -235,8 +327,8 @@
     </form>
   </section>
 
-  <script src="data.js"></script>
-  <script src="assistant.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js?v=3"></script>
+  <script src="assistant.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
