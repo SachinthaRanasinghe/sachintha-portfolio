@@ -51,7 +51,7 @@
             <p class="sub">${esc(p.subtitle)}</p>
           </div>
           <p class="desc">${esc(p.summary)}</p>
-          <p class="tags">${p.tags.map(esc).join(" / ")}</p>
+          <p class="tags">${p.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</p>
           <div class="card-foot"><span class="case-link">View case study <span class="arr">→</span></span></div>
         </div>
       </a>`
