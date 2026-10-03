@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -35,10 +35,11 @@
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="#home" data-section="home"><span class="idx">01</span>Home</a>
       <a href="#projects" data-section="projects"><span class="idx">02</span>Projects</a>
-      <a href="#skills" data-section="skills"><span class="idx">03</span>Skills</a>
-      <a href="#about" data-section="about"><span class="idx">04</span>About</a>
-      <a href="#resume" data-section="resume"><span class="idx">05</span>Resume</a>
-      <a href="#contact" data-section="contact"><span class="idx">06</span>Contact</a>
+      <a href="#play" class="nav-play"><span class="idx">03</span>Live demo<span class="live-tag">Live</span></a>
+      <a href="#skills" data-section="skills"><span class="idx">04</span>Skills</a>
+      <a href="#about" data-section="about"><span class="idx">05</span>About</a>
+      <a href="#resume" data-section="resume"><span class="idx">06</span>Resume</a>
+      <a href="#contact" data-section="contact"><span class="idx">07</span>Contact</a>
     </nav>
     <div class="sb-bottom">
       <p class="status"><i class="dot"></i>Available for work</p>
@@ -307,6 +308,26 @@
     <div class="case-inner" id="caseBody"></div>
   </dialog>
 
+  <!-- Live demo: LLM Escape Room -->
+  <dialog class="play" id="play" aria-labelledby="playTitle">
+    <div class="play-bar">
+      <div class="play-title">
+        <span class="live-tag">Live</span>
+        <h2 id="playTitle">LLM Escape Room</h2>
+        <span class="play-hint">Pick Watch for a recorded run or Race to start two models live.</span>
+      </div>
+      <div class="play-actions">
+        <a class="btn btn-ghost" href="#project/ai-escape-room">Case study</a>
+        <a class="btn btn-ghost" href="https://llm-escape-room.netlify.app/" target="_blank" rel="noopener">New tab <span class="arr">↗</span></a>
+        <button class="icon-btn" data-close aria-label="Close live demo">✕</button>
+      </div>
+    </div>
+    <div class="play-stage">
+      <p class="play-loading meta">Loading the escape room…</p>
+      <iframe id="playFrame" title="LLM Escape Room live demo" allow="fullscreen; autoplay; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+  </dialog>
+
   <!-- Ask my portfolio -->
   <button class="ask-fab" id="askFab" aria-expanded="false" aria-controls="askPanel">
     <span class="spark">✦</span> Ask my portfolio
@@ -327,8 +348,8 @@
     </form>
   </section>
 
-  <script src="data.js?v=3"></script>
+  <script src="data.js?v=4"></script>
   <script src="assistant.js?v=3"></script>
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

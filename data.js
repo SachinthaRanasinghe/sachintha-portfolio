@@ -39,6 +39,7 @@ window.PORTFOLIO = {
         "82 test files across ~26k lines of TypeScript (Vitest + Playwright).",
       ],
       stack: ["Next.js 16", "React 19", "TypeScript", "React Three Fiber", "three.js", "Zod", "Groq", "Gemini", "OpenRouter", "Vitest", "Playwright"],
+      demo: "#play",
       links: [{ label: "Source on GitHub", href: "https://github.com/SachinthaRanasinghe/llm-escape-room" }],
     },
     {

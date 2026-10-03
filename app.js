@@ -112,6 +112,7 @@
         <aside class="case-side">
           <div><h3>Stack</h3><div class="chips">${p.stack.map((s) => `<span>${esc(s)}</span>`).join("")}</div></div>
           <div><h3>Links</h3><div class="case-links">
+            ${p.demo ? `<a class="btn btn-primary" href="${p.demo}">Try it live <span class="arr">→</span></a>` : ""}
             ${p.links.map((l) => `<a class="btn btn-ghost" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} <span class="arr">↗</span></a>`).join("")}
             ${p.note ? `<p class="case-note">${esc(p.note)}</p>` : ""}
             <a class="btn btn-ghost" href="mailto:sachintha.ranasinghe.int@gmail.com?subject=${encodeURIComponent(p.name)}">Ask about this project <span class="arr">→</span></a>
@@ -159,18 +160,50 @@
     if (e.target === dialog || e.target.closest("[data-close]")) closeCase();
   });
 
-  // Hash routing keeps case studies shareable: /#project/ai-escape-room
+  // ---------- Live demo ----------
+  // The iframe only loads while the dialog is open, so the 3D scene and any
+  // live race stop as soon as it closes.
+  const play = $("#play");
+  const playFrame = $("#playFrame");
+  const PLAY_URL = "https://llm-escape-room.netlify.app/";
+  let playReturnFocus = null;
+
+  function openPlay() {
+    if (play.open) return;
+    playReturnFocus = document.activeElement;
+    play.classList.remove("loaded");
+    playFrame.src = PLAY_URL;
+    play.showModal();
+    document.title = "LLM Escape Room | Sachintha Ranasinghe";
+  }
+  playFrame.addEventListener("load", () => playFrame.src && play.classList.add("loaded"));
+
+  play.addEventListener("close", () => {
+    playFrame.removeAttribute("src");
+    document.title = "Sachintha Ranasinghe | AI Systems Engineer";
+    if (location.hash === "#play") history.replaceState(null, "", location.pathname + location.search);
+    if (playReturnFocus) playReturnFocus.focus({ preventScroll: true });
+  });
+  play.addEventListener("click", (e) => {
+    if (e.target === play || e.target.closest("[data-close]")) play.close();
+  });
+
+  // Hash routing keeps case studies and the demo shareable: /#project/ai-escape-room, /#play
   function route() {
     const m = location.hash.match(/^#project\/([\w-]+)/);
-    if (m) openCase(m[1]);
-    else if (dialog.open) closeCase();
+    if (m) {
+      if (play.open) play.close();
+      openCase(m[1]);
+    } else if (dialog.open) closeCase();
+    if (location.hash === "#play") openPlay();
+    else if (!m && play.open) play.close();
   }
   window.addEventListener("hashchange", route);
   window.PORTFOLIO.openCase = (slug) => (location.hash = `#project/${slug}`);
 
   // Keep project links from scrolling the page underneath
   document.addEventListener("click", (e) => {
-    const a = e.target.closest('a[href^="#project/"]');
+    const a = e.target.closest('a[href^="#project/"], a[href="#play"]');
     if (!a) return;
     e.preventDefault();
     history.pushState(null, "", a.getAttribute("href"));
